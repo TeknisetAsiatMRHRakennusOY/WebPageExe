@@ -1,38 +1,108 @@
-<!DOCTYPE html>
-<html lang="">
+<!doctype html>
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="">
-    <!-- Classic favicon -->
-    <link rel="icon" href="Assets/Icons/favicon.ico">
-    <!-- PNG favicons -->
-    <link rel="icon" type="image/png" sizes="16x16" href="Assets/Icons/favicon-16x16.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="Assets/Icons/favicon-32x32.png">
-    <!-- Apple Touch Icon -->
-    <link rel="apple-touch-icon" sizes="180x180" href="Assets/Icons/apple-touch-icon.png">
-    <!-- Android / Chrome -->
-    <link rel="manifest" href="site.webmanifest">
-    <!-- Safari pinned tab (macOS) -->
-    <link rel="mask-icon" href="Assets/Icons/safari-pinned-tab.svg" color="#1a1a1a">
-    <!-- Theme color -->
-    <meta name="theme-color" content="#ffffff">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="MRH Rakennus Oy provides reliable and modern construction services.">
+  <title>MRH Rakennus Oy | Construction Services</title>
+  <link rel="icon" href="../../Assets/Icons/favicon.ico">
+  <link rel="stylesheet" href="../../css.css">
 </head>
 <body>
-    <nav class="lang-switch">
-        <a href="../fi/">FI</a>
-        <a href="../en/">EN</a>
-        <a href="../ru/">RU</a>
-        <a href="../et/">ET</a>
-        <a href="../uk/">UA</a>
-    </nav>
-
-    <h1 id="hero-title"></h1>
-    <p id="hero-text"></p>
-
-    <h2 id="services-heading"></h2>
-    <ul id="services-list"></ul>
-
-    <script src="../../js/lang.js" defer></script>
+  <a class="skip-link" href="#home">Skip to content</a>
+  <header class="site-header" data-header>
+    <div class="container header-inner">
+      <a class="logo-link" href="#home" aria-label="MRH Rakennus Oy home">
+        <img src="../../Assets/Icons/LOGO4 OK.png" alt="MRH Rakennus Oy logo">
+      </a>
+      <button class="nav-toggle" type="button" aria-label="Open menu" aria-controls="site-nav" aria-expanded="false" data-nav-toggle>
+        <span></span>
+      </button>
+      <nav class="site-nav" id="site-nav" aria-label="Main navigation" data-nav>
+        <ul class="nav-list">
+          <li><a class="nav-link" href="#home">Home</a></li>
+          <li><a class="nav-link" href="#services">Services</a></li>
+          <li><a class="nav-link" href="#projects">Projects</a></li>
+          <li><a class="nav-link" href="#about">About</a></li>
+          <li><a class="nav-link" href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+      <nav class="lang-switch" aria-label="Language switcher">
+        <a class="lang-link" href="../fi/" aria-label="Suomi">🇫🇮</a>
+        <a class="lang-link" href="../en/" aria-label="English (UK)">🇬🇧</a>
+        <a class="lang-link" href="../ru/" aria-label="Русский">🇷🇺</a>
+        <a class="lang-link" href="../et/" aria-label="Eesti">🇪🇪</a>
+        <a class="lang-link" href="../uk/" aria-label="Українська">🇺🇦</a>
+      </nav>
+    </div>
+  </header>
+  <main>
+    <section id="home" class="hero">
+      <div class="container hero-content" data-reveal>
+        <h1>MRH Rakennus Oy</h1>
+        <p>Minimal, clean and dependable construction for new builds and renovation projects.</p>
+        <a class="btn btn-primary" href="#contact">Get in touch</a>
+      </div>
+    </section>
+    <section id="services">
+      <div class="container">
+        <div class="section-head" data-reveal>
+          <span class="section-kicker">Services</span>
+          <h2>Construction services</h2>
+          <p>Select a service card to expand details. Placeholder text is used for now.</p>
+        </div>
+        <div class="services-grid">
+          <article class="service-card" data-service-card data-reveal><div class="service-head"><h3 class="service-title">partition wall masonry</h3><div class="service-thumb"><img src="../../Assets/Images/BackGround.jpg" alt="Partition wall masonry"></div><button class="service-toggle" type="button" aria-expanded="false" aria-controls="service-en-1" data-read-more="Read more" data-read-less="Read less"><span class="arrow" aria-hidden="true">▼</span><span data-toggle-label>Read more</span></button></div><div class="service-content" id="service-en-1" aria-hidden="true"><div class="service-content-inner"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec efficitur dui ut viverra pulvinar.</p></div></div></article>
+          <article class="service-card" data-service-card data-reveal><div class="service-head"><h3 class="service-title">suspended ceilings</h3><div class="service-thumb"><img src="../../Assets/Images/BackGround.jpg" alt="Suspended ceilings"></div><button class="service-toggle" type="button" aria-expanded="false" aria-controls="service-en-2" data-read-more="Read more" data-read-less="Read less"><span class="arrow" aria-hidden="true">▼</span><span data-toggle-label>Read more</span></button></div><div class="service-content" id="service-en-2" aria-hidden="true"><div class="service-content-inner"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer sit amet volutpat quam.</p></div></div></article>
+          <article class="service-card" data-service-card data-reveal><div class="service-head"><h3 class="service-title">walls</h3><div class="service-thumb"><img src="../../Assets/Images/BackGround.jpg" alt="Walls"></div><button class="service-toggle" type="button" aria-expanded="false" aria-controls="service-en-3" data-read-more="Read more" data-read-less="Read less"><span class="arrow" aria-hidden="true">▼</span><span data-toggle-label>Read more</span></button></div><div class="service-content" id="service-en-3" aria-hidden="true"><div class="service-content-inner"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin id eros ac ante facilisis suscipit.</p></div></div></article>
+          <article class="service-card" data-service-card data-reveal><div class="service-head"><h3 class="service-title">frames</h3><div class="service-thumb"><img src="../../Assets/Images/BackGround.jpg" alt="Frames"></div><button class="service-toggle" type="button" aria-expanded="false" aria-controls="service-en-4" data-read-more="Read more" data-read-less="Read less"><span class="arrow" aria-hidden="true">▼</span><span data-toggle-label>Read more</span></button></div><div class="service-content" id="service-en-4" aria-hidden="true"><div class="service-content-inner"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur feugiat lectus sem, a commodo turpis elementum id.</p></div></div></article>
+          <article class="service-card" data-service-card data-reveal><div class="service-head"><h3 class="service-title">renovation</h3><div class="service-thumb"><img src="../../Assets/Images/BackGround.jpg" alt="Renovation"></div><button class="service-toggle" type="button" aria-expanded="false" aria-controls="service-en-5" data-read-more="Read more" data-read-less="Read less"><span class="arrow" aria-hidden="true">▼</span><span data-toggle-label>Read more</span></button></div><div class="service-content" id="service-en-5" aria-hidden="true"><div class="service-content-inner"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi. Sed in venenatis massa.</p></div></div></article>
+          <article class="service-card" data-service-card data-reveal><div class="service-head"><h3 class="service-title">door installation</h3><div class="service-thumb"><img src="../../Assets/Images/BackGround.jpg" alt="Door installation"></div><button class="service-toggle" type="button" aria-expanded="false" aria-controls="service-en-6" data-read-more="Read more" data-read-less="Read less"><span class="arrow" aria-hidden="true">▼</span><span data-toggle-label>Read more</span></button></div><div class="service-content" id="service-en-6" aria-hidden="true"><div class="service-content-inner"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse ut eleifend risus.</p></div></div></article>
+          <article class="service-card" data-service-card data-reveal><div class="service-head"><h3 class="service-title">window installation</h3><div class="service-thumb"><img src="../../Assets/Images/BackGround.jpg" alt="Window installation"></div><button class="service-toggle" type="button" aria-expanded="false" aria-controls="service-en-7" data-read-more="Read more" data-read-less="Read less"><span class="arrow" aria-hidden="true">▼</span><span data-toggle-label>Read more</span></button></div><div class="service-content" id="service-en-7" aria-hidden="true"><div class="service-content-inner"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi interdum lectus sed neque dictum condimentum.</p></div></div></article>
+        </div>
+      </div>
+    </section>
+    <section id="projects">
+      <div class="container">
+        <div class="section-head" data-reveal><span class="section-kicker">Projects</span><h2>Recent work</h2></div>
+        <div class="projects-grid">
+          <article class="project-card" data-reveal><img src="../../Assets/Images/BackGround.jpg" alt="Residential project"><div class="project-overlay">Lorem ipsum interior build for a housing unit.</div></article>
+          <article class="project-card" data-reveal><img src="../../Assets/Images/BackGround.jpg" alt="Office project"><div class="project-overlay">Lorem ipsum office renovation and partition work.</div></article>
+          <article class="project-card" data-reveal><img src="../../Assets/Images/BackGround.jpg" alt="Facade project"><div class="project-overlay">Lorem ipsum facade masonry detailing.</div></article>
+          <article class="project-card" data-reveal><img src="../../Assets/Images/BackGround.jpg" alt="Interior project"><div class="project-overlay">Lorem ipsum interior wall and ceiling installation.</div></article>
+        </div>
+      </div>
+    </section>
+    <section id="about">
+      <div class="container">
+        <div class="section-head" data-reveal><span class="section-kicker">About</span><h2>Local team, clear execution</h2></div>
+        <div class="about-grid" data-reveal>
+          <article class="about-copy"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus dignissim tortor sed urna commodo, in fermentum lorem placerat.</p><p>Donec consequat, augue vel tincidunt ullamcorper, odio est lacinia mauris, et vestibulum lorem elit a neque.</p></article>
+          <figure class="about-image"><img src="../../Assets/Images/BackGround.jpg" alt="Construction placeholder image"></figure>
+          <article class="about-copy"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In a neque at libero vehicula laoreet vitae vel purus.</p><p>Aliquam erat volutpat. Cras luctus tortor sed nunc viverra, nec varius arcu feugiat.</p></article>
+        </div>
+      </div>
+    </section>
+    <section id="contact">
+      <div class="container">
+        <div class="section-head" data-reveal><span class="section-kicker">Contact</span><h2>Let us build your next project</h2></div>
+        <div class="contact-grid">
+          <article class="contact-card" data-reveal><h3>Contact details</h3><ul class="contact-list"><li>Phone: +358 00 000 0000</li><li>Email: mrhrakennusoy@gmail.com</li><li>Address: Example Street 1, 37600 Valkeakoski</li></ul></article>
+          <aside class="contact-cta" data-reveal><h3>Start a conversation</h3><p>Send us a message and we will get back to you soon.</p><a class="btn btn-primary" href="mailto:mrhrakennusoy@gmail.com">Get in touch</a></aside>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <ul class="footer-nav"><li><a href="#home">Home</a></li><li><a href="#services">Services</a></li><li><a href="#projects">Projects</a></li><li><a href="#about">About</a></li><li><a href="#contact">Contact</a></li></ul>
+      <p class="footer-copy">&copy; MRH Rakennus Oy <span data-year></span></p>
+      <p class="footer-rights">All rights reserved.</p>
+      <p class="footer-credit">Site by <a href="https://www.linkedin.com/in/olenahodun" target="_blank" rel="noopener noreferrer">Olena Hodun</a></p>
+    </div>
+  </footer>
+  <script src="../../js/ui.js" defer></script>
+  <script src="../../js/animations.js" defer></script>
+  <script src="../../js/lang.js" defer></script>
 </body>
 </html>

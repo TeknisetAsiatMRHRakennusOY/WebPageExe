@@ -1,38 +1,189 @@
-<!DOCTYPE html>
-<html lang="">
+<!doctype html>
+<html lang="fi">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="">
-    <!-- Classic favicon -->
-    <link rel="icon" href="Assets/Icons/favicon.ico">
-    <!-- PNG favicons -->
-    <link rel="icon" type="image/png" sizes="16x16" href="Assets/Icons/favicon-16x16.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="Assets/Icons/favicon-32x32.png">
-    <!-- Apple Touch Icon -->
-    <link rel="apple-touch-icon" sizes="180x180" href="Assets/Icons/apple-touch-icon.png">
-    <!-- Android / Chrome -->
-    <link rel="manifest" href="site.webmanifest">
-    <!-- Safari pinned tab (macOS) -->
-    <link rel="mask-icon" href="Assets/Icons/safari-pinned-tab.svg" color="#1a1a1a">
-    <!-- Theme color -->
-    <meta name="theme-color" content="#ffffff">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="MRH Rakennus Oy tarjoaa laadukasta rakennus- ja saneerauspalvelua.">
+  <title>MRH Rakennus Oy | Rakennuspalvelut</title>
+  <link rel="icon" href="../../Assets/Icons/favicon.ico">
+  <link rel="stylesheet" href="../../css.css">
 </head>
 <body>
-    <nav class="lang-switch">
-        <a href="../fi/">FI</a>
-        <a href="../en/">EN</a>
-        <a href="../ru/">RU</a>
-        <a href="../et/">ET</a>
-        <a href="../uk/">UA</a>
-    </nav>
-
-    <h1 id="hero-title"></h1>
-    <p id="hero-text"></p>
-
-    <h2 id="services-heading"></h2>
-    <ul id="services-list"></ul>
-
-    <script src="../../js/lang.js" defer></script>
+  <a class="skip-link" href="#home">Siirry sisältöön</a>
+  <header class="site-header" data-header>
+    <div class="container header-inner">
+      <a class="logo-link" href="#home" aria-label="MRH Rakennus Oy etusivulle">
+        <img src="../../Assets/Icons/LOGO4 OK.png" alt="MRH Rakennus Oy logo">
+      </a>
+      <button class="nav-toggle" type="button" aria-label="Avaa valikko" aria-controls="site-nav" aria-expanded="false" data-nav-toggle>
+        <span></span>
+      </button>
+      <nav class="site-nav" id="site-nav" aria-label="Päävalikko" data-nav>
+        <ul class="nav-list">
+          <li><a class="nav-link" href="#home">Etusivu</a></li>
+          <li><a class="nav-link" href="#services">Palvelut</a></li>
+          <li><a class="nav-link" href="#projects">Projektit</a></li>
+          <li><a class="nav-link" href="#about">Meistä</a></li>
+          <li><a class="nav-link" href="#contact">Yhteys</a></li>
+        </ul>
+      </nav>
+      <nav class="lang-switch" aria-label="Kielen vaihto">
+        <a class="lang-link" href="../fi/" aria-label="Suomi">🇫🇮</a>
+        <a class="lang-link" href="../en/" aria-label="English (UK)">🇬🇧</a>
+        <a class="lang-link" href="../ru/" aria-label="Русский">🇷🇺</a>
+        <a class="lang-link" href="../et/" aria-label="Eesti">🇪🇪</a>
+        <a class="lang-link" href="../uk/" aria-label="Українська">🇺🇦</a>
+      </nav>
+    </div>
+  </header>
+  <main>
+    <section id="home" class="hero">
+      <div class="container hero-content" data-reveal>
+        <h1>MRH Rakennus Oy</h1>
+        <p>Minimalistinen, varma ja laadukas rakentaminen uudiskohteisiin ja saneeraukseen.</p>
+        <a class="btn btn-primary" href="#contact">Ota yhteyttä</a>
+      </div>
+    </section>
+    <section id="services">
+      <div class="container">
+        <div class="section-head" data-reveal>
+          <span class="section-kicker">Palvelut</span>
+          <h2>Rakennuspalvelut</h2>
+          <p>Valitse palvelu ja avaa lisätiedot. Lorem ipsum -sisältö toimii nyt paikkatekstinä.</p>
+        </div>
+        <div class="services-grid">
+          <article class="service-card" data-service-card data-reveal>
+            <div class="service-head">
+              <h3 class="service-title">väliseinä muuraus</h3>
+              <div class="service-thumb"><img src="../../Assets/Images/BackGround.jpg" alt="Väliseinämuuraus"></div>
+              <button class="service-toggle" type="button" aria-expanded="false" aria-controls="service-fi-1" data-read-more="Lue lisää" data-read-less="Lue vähemmän"><span class="arrow" aria-hidden="true">▼</span><span data-toggle-label>Lue lisää</span></button>
+            </div>
+            <div class="service-content" id="service-fi-1" aria-hidden="true"><div class="service-content-inner"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec efficitur dui ut viverra pulvinar.</p></div></div>
+          </article>
+          <article class="service-card" data-service-card data-reveal>
+            <div class="service-head">
+              <h3 class="service-title">alakatot</h3>
+              <div class="service-thumb"><img src="../../Assets/Images/BackGround.jpg" alt="Alakatot"></div>
+              <button class="service-toggle" type="button" aria-expanded="false" aria-controls="service-fi-2" data-read-more="Lue lisää" data-read-less="Lue vähemmän"><span class="arrow" aria-hidden="true">▼</span><span data-toggle-label>Lue lisää</span></button>
+            </div>
+            <div class="service-content" id="service-fi-2" aria-hidden="true"><div class="service-content-inner"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer sit amet volutpat quam.</p></div></div>
+          </article>
+          <article class="service-card" data-service-card data-reveal>
+            <div class="service-head">
+              <h3 class="service-title">seinät</h3>
+              <div class="service-thumb"><img src="../../Assets/Images/BackGround.jpg" alt="Seinätyöt"></div>
+              <button class="service-toggle" type="button" aria-expanded="false" aria-controls="service-fi-3" data-read-more="Lue lisää" data-read-less="Lue vähemmän"><span class="arrow" aria-hidden="true">▼</span><span data-toggle-label>Lue lisää</span></button>
+            </div>
+            <div class="service-content" id="service-fi-3" aria-hidden="true"><div class="service-content-inner"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin id eros ac ante facilisis suscipit.</p></div></div>
+          </article>
+          <article class="service-card" data-service-card data-reveal>
+            <div class="service-head">
+              <h3 class="service-title">rungot</h3>
+              <div class="service-thumb"><img src="../../Assets/Images/BackGround.jpg" alt="Runkotyöt"></div>
+              <button class="service-toggle" type="button" aria-expanded="false" aria-controls="service-fi-4" data-read-more="Lue lisää" data-read-less="Lue vähemmän"><span class="arrow" aria-hidden="true">▼</span><span data-toggle-label>Lue lisää</span></button>
+            </div>
+            <div class="service-content" id="service-fi-4" aria-hidden="true"><div class="service-content-inner"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur feugiat lectus sem, a commodo turpis elementum id.</p></div></div>
+          </article>
+          <article class="service-card" data-service-card data-reveal>
+            <div class="service-head">
+              <h3 class="service-title">saneeraus</h3>
+              <div class="service-thumb"><img src="../../Assets/Images/BackGround.jpg" alt="Saneeraus"></div>
+              <button class="service-toggle" type="button" aria-expanded="false" aria-controls="service-fi-5" data-read-more="Lue lisää" data-read-less="Lue vähemmän"><span class="arrow" aria-hidden="true">▼</span><span data-toggle-label>Lue lisää</span></button>
+            </div>
+            <div class="service-content" id="service-fi-5" aria-hidden="true"><div class="service-content-inner"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi. Sed in venenatis massa.</p></div></div>
+          </article>
+          <article class="service-card" data-service-card data-reveal>
+            <div class="service-head">
+              <h3 class="service-title">ovien asennus</h3>
+              <div class="service-thumb"><img src="../../Assets/Images/BackGround.jpg" alt="Ovien asennus"></div>
+              <button class="service-toggle" type="button" aria-expanded="false" aria-controls="service-fi-6" data-read-more="Lue lisää" data-read-less="Lue vähemmän"><span class="arrow" aria-hidden="true">▼</span><span data-toggle-label>Lue lisää</span></button>
+            </div>
+            <div class="service-content" id="service-fi-6" aria-hidden="true"><div class="service-content-inner"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse ut eleifend risus.</p></div></div>
+          </article>
+          <article class="service-card" data-service-card data-reveal>
+            <div class="service-head">
+              <h3 class="service-title">ikkunoiden asennus</h3>
+              <div class="service-thumb"><img src="../../Assets/Images/BackGround.jpg" alt="Ikkunoiden asennus"></div>
+              <button class="service-toggle" type="button" aria-expanded="false" aria-controls="service-fi-7" data-read-more="Lue lisää" data-read-less="Lue vähemmän"><span class="arrow" aria-hidden="true">▼</span><span data-toggle-label>Lue lisää</span></button>
+            </div>
+            <div class="service-content" id="service-fi-7" aria-hidden="true"><div class="service-content-inner"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi interdum lectus sed neque dictum condimentum.</p></div></div>
+          </article>
+        </div>
+      </div>
+    </section>
+    <section id="projects">
+      <div class="container">
+        <div class="section-head" data-reveal">
+          <span class="section-kicker">Projektit</span>
+          <h2>Viimeaikaiset kohteet</h2>
+        </div>
+        <div class="projects-grid">
+          <article class="project-card" data-reveal><img src="../../Assets/Images/BackGround.jpg" alt="Asuntokohde"><div class="project-overlay">Lorem ipsum asuntokohteen sisätyöt.</div></article>
+          <article class="project-card" data-reveal><img src="../../Assets/Images/BackGround.jpg" alt="Toimitilakohde"><div class="project-overlay">Lorem ipsum toimistotilan saneeraus.</div></article>
+          <article class="project-card" data-reveal><img src="../../Assets/Images/BackGround.jpg" alt="Julkisivukohde"><div class="project-overlay">Lorem ipsum julkisivun muurausratkaisu.</div></article>
+          <article class="project-card" data-reveal><img src="../../Assets/Images/BackGround.jpg" alt="Sisärakennuskohde"><div class="project-overlay">Lorem ipsum sisäseinien ja kattojen asennus.</div></article>
+        </div>
+      </div>
+    </section>
+    <section id="about">
+      <div class="container">
+        <div class="section-head" data-reveal>
+          <span class="section-kicker">Meistä</span>
+          <h2>Paikallinen rakentaja, selkeä toteutus</h2>
+        </div>
+        <div class="about-grid" data-reveal>
+          <article class="about-copy">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus dignissim tortor sed urna commodo, in fermentum lorem placerat.</p>
+            <p>Donec consequat, augue vel tincidunt ullamcorper, odio est lacinia mauris, et vestibulum lorem elit a neque.</p>
+          </article>
+          <figure class="about-image"><img src="../../Assets/Images/BackGround.jpg" alt="Rakennustyömaan placeholder-kuva"></figure>
+          <article class="about-copy">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In a neque at libero vehicula laoreet vitae vel purus.</p>
+            <p>Aliquam erat volutpat. Cras luctus tortor sed nunc viverra, nec varius arcu feugiat.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+    <section id="contact">
+      <div class="container">
+        <div class="section-head" data-reveal>
+          <span class="section-kicker">Yhteys</span>
+          <h2>Rakennetaan yhdessä seuraava kohteesi</h2>
+        </div>
+        <div class="contact-grid">
+          <article class="contact-card" data-reveal>
+            <h3>Yhteystiedot</h3>
+            <ul class="contact-list">
+              <li>Puhelin: +358 00 000 0000</li>
+              <li>Sähköposti: mrhrakennusoy@gmail.com</li>
+              <li>Osoite: Esimerkkikatu 1, 37600 Valkeakoski</li>
+            </ul>
+          </article>
+          <aside class="contact-cta" data-reveal>
+            <h3>Aloitetaan projekti</h3>
+            <p>Jätä viesti ja palaamme sinulle mahdollisimman pian.</p>
+            <a class="btn btn-primary" href="mailto:mrhrakennusoy@gmail.com">Ota yhteyttä</a>
+          </aside>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <ul class="footer-nav">
+        <li><a href="#home">Etusivu</a></li>
+        <li><a href="#services">Palvelut</a></li>
+        <li><a href="#projects">Projektit</a></li>
+        <li><a href="#about">Meistä</a></li>
+        <li><a href="#contact">Yhteys</a></li>
+      </ul>
+      <p class="footer-copy">&copy; MRH Rakennus Oy <span data-year></span></p>
+      <p class="footer-rights">All rights reserved.</p>
+      <p class="footer-credit">Site by <a href="https://www.linkedin.com/in/olenahodun" target="_blank" rel="noopener noreferrer">Olena Hodun</a></p>
+    </div>
+  </footer>
+  <script src="../../js/ui.js" defer></script>
+  <script src="../../js/animations.js" defer></script>
+  <script src="../../js/lang.js" defer></script>
 </body>
 </html>

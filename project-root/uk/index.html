@@ -1,38 +1,41 @@
-<!DOCTYPE html>
-<html lang="">
+<!doctype html>
+<html lang="uk">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="">
-    <!-- Classic favicon -->
-    <link rel="icon" href="Assets/Icons/favicon.ico">
-    <!-- PNG favicons -->
-    <link rel="icon" type="image/png" sizes="16x16" href="Assets/Icons/favicon-16x16.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="Assets/Icons/favicon-32x32.png">
-    <!-- Apple Touch Icon -->
-    <link rel="apple-touch-icon" sizes="180x180" href="Assets/Icons/apple-touch-icon.png">
-    <!-- Android / Chrome -->
-    <link rel="manifest" href="site.webmanifest">
-    <!-- Safari pinned tab (macOS) -->
-    <link rel="mask-icon" href="Assets/Icons/safari-pinned-tab.svg" color="#1a1a1a">
-    <!-- Theme color -->
-    <meta name="theme-color" content="#ffffff">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="MRH Rakennus Oy: сучасні та надійні будівельні послуги.">
+  <title>MRH Rakennus Oy | Будівельні послуги</title>
+  <link rel="icon" href="../../Assets/Icons/favicon.ico">
+  <link rel="stylesheet" href="../../css.css">
 </head>
 <body>
-    <nav class="lang-switch">
-        <a href="../fi/">FI</a>
-        <a href="../en/">EN</a>
-        <a href="../ru/">RU</a>
-        <a href="../et/">ET</a>
-        <a href="../uk/">UA</a>
-    </nav>
-
-    <h1 id="hero-title"></h1>
-    <p id="hero-text"></p>
-
-    <h2 id="services-heading"></h2>
-    <ul id="services-list"></ul>
-
-    <script src="../../js/lang.js" defer></script>
+  <a class="skip-link" href="#home">Перейти до вмісту</a>
+  <header class="site-header" data-header>
+    <div class="container header-inner">
+      <a class="logo-link" href="#home" aria-label="MRH Rakennus Oy головна"><img src="../../Assets/Icons/LOGO4 OK.png" alt="Логотип MRH Rakennus Oy"></a>
+      <button class="nav-toggle" type="button" aria-label="Відкрити меню" aria-controls="site-nav" aria-expanded="false" data-nav-toggle><span></span></button>
+      <nav class="site-nav" id="site-nav" aria-label="Головна навігація" data-nav><ul class="nav-list"><li><a class="nav-link" href="#home">Головна</a></li><li><a class="nav-link" href="#services">Послуги</a></li><li><a class="nav-link" href="#projects">Проєкти</a></li><li><a class="nav-link" href="#about">Про нас</a></li><li><a class="nav-link" href="#contact">Контакти</a></li></ul></nav>
+      <nav class="lang-switch" aria-label="Перемикач мов"><a class="lang-link" href="../fi/" aria-label="Suomi">🇫🇮</a><a class="lang-link" href="../en/" aria-label="English (UK)">🇬🇧</a><a class="lang-link" href="../ru/" aria-label="Русский">🇷🇺</a><a class="lang-link" href="../et/" aria-label="Eesti">🇪🇪</a><a class="lang-link" href="../uk/" aria-label="Українська">🇺🇦</a></nav>
+    </div>
+  </header>
+  <main>
+    <section id="home" class="hero"><div class="container hero-content" data-reveal><h1>MRH Rakennus Oy</h1><p>Мінімалістичний підхід і надійна якість для нового будівництва та реновацій.</p><a class="btn btn-primary" href="#contact">Зв'язатися</a></div></section>
+    <section id="services"><div class="container"><div class="section-head" data-reveal><span class="section-kicker">Послуги</span><h2>Будівельні послуги</h2><p>Відкрийте картку послуги, щоб побачити деталі. Наразі використано текст-заповнювач.</p></div><div class="services-grid">
+      <article class="service-card" data-service-card data-reveal><div class="service-head"><h3 class="service-title">мурування перегородок</h3><div class="service-thumb"><img src="../../Assets/Images/BackGround.jpg" alt="Мурування перегородок"></div><button class="service-toggle" type="button" aria-expanded="false" aria-controls="service-uk-1" data-read-more="Детальніше" data-read-less="Згорнути"><span class="arrow" aria-hidden="true">▼</span><span data-toggle-label>Детальніше</span></button></div><div class="service-content" id="service-uk-1" aria-hidden="true"><div class="service-content-inner"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec efficitur dui ut viverra pulvinar.</p></div></div></article>
+      <article class="service-card" data-service-card data-reveal><div class="service-head"><h3 class="service-title">підвісні стелі</h3><div class="service-thumb"><img src="../../Assets/Images/BackGround.jpg" alt="Підвісні стелі"></div><button class="service-toggle" type="button" aria-expanded="false" aria-controls="service-uk-2" data-read-more="Детальніше" data-read-less="Згорнути"><span class="arrow" aria-hidden="true">▼</span><span data-toggle-label>Детальніше</span></button></div><div class="service-content" id="service-uk-2" aria-hidden="true"><div class="service-content-inner"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer sit amet volutpat quam.</p></div></div></article>
+      <article class="service-card" data-service-card data-reveal><div class="service-head"><h3 class="service-title">стіни</h3><div class="service-thumb"><img src="../../Assets/Images/BackGround.jpg" alt="Роботи зі стінами"></div><button class="service-toggle" type="button" aria-expanded="false" aria-controls="service-uk-3" data-read-more="Детальніше" data-read-less="Згорнути"><span class="arrow" aria-hidden="true">▼</span><span data-toggle-label>Детальніше</span></button></div><div class="service-content" id="service-uk-3" aria-hidden="true"><div class="service-content-inner"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin id eros ac ante facilisis suscipit.</p></div></div></article>
+      <article class="service-card" data-service-card data-reveal><div class="service-head"><h3 class="service-title">каркаси</h3><div class="service-thumb"><img src="../../Assets/Images/BackGround.jpg" alt="Каркасні роботи"></div><button class="service-toggle" type="button" aria-expanded="false" aria-controls="service-uk-4" data-read-more="Детальніше" data-read-less="Згорнути"><span class="arrow" aria-hidden="true">▼</span><span data-toggle-label>Детальніше</span></button></div><div class="service-content" id="service-uk-4" aria-hidden="true"><div class="service-content-inner"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur feugiat lectus sem, a commodo turpis elementum id.</p></div></div></article>
+      <article class="service-card" data-service-card data-reveal><div class="service-head"><h3 class="service-title">санація та ремонт</h3><div class="service-thumb"><img src="../../Assets/Images/BackGround.jpg" alt="Санація"></div><button class="service-toggle" type="button" aria-expanded="false" aria-controls="service-uk-5" data-read-more="Детальніше" data-read-less="Згорнути"><span class="arrow" aria-hidden="true">▼</span><span data-toggle-label>Детальніше</span></button></div><div class="service-content" id="service-uk-5" aria-hidden="true"><div class="service-content-inner"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi. Sed in venenatis massa.</p></div></div></article>
+      <article class="service-card" data-service-card data-reveal><div class="service-head"><h3 class="service-title">монтаж дверей</h3><div class="service-thumb"><img src="../../Assets/Images/BackGround.jpg" alt="Монтаж дверей"></div><button class="service-toggle" type="button" aria-expanded="false" aria-controls="service-uk-6" data-read-more="Детальніше" data-read-less="Згорнути"><span class="arrow" aria-hidden="true">▼</span><span data-toggle-label>Детальніше</span></button></div><div class="service-content" id="service-uk-6" aria-hidden="true"><div class="service-content-inner"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse ut eleifend risus.</p></div></div></article>
+      <article class="service-card" data-service-card data-reveal><div class="service-head"><h3 class="service-title">монтаж вікон</h3><div class="service-thumb"><img src="../../Assets/Images/BackGround.jpg" alt="Монтаж вікон"></div><button class="service-toggle" type="button" aria-expanded="false" aria-controls="service-uk-7" data-read-more="Детальніше" data-read-less="Згорнути"><span class="arrow" aria-hidden="true">▼</span><span data-toggle-label>Детальніше</span></button></div><div class="service-content" id="service-uk-7" aria-hidden="true"><div class="service-content-inner"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi interdum lectus sed neque dictum condimentum.</p></div></div></article>
+    </div></div></section>
+    <section id="projects"><div class="container"><div class="section-head" data-reveal><span class="section-kicker">Проєкти</span><h2>Останні роботи</h2></div><div class="projects-grid"><article class="project-card" data-reveal><img src="../../Assets/Images/BackGround.jpg" alt="Житловий проєкт"><div class="project-overlay">Lorem ipsum внутрішні роботи в житловому об'єкті.</div></article><article class="project-card" data-reveal><img src="../../Assets/Images/BackGround.jpg" alt="Офісний проєкт"><div class="project-overlay">Lorem ipsum реновація офісного простору.</div></article><article class="project-card" data-reveal><img src="../../Assets/Images/BackGround.jpg" alt="Фасадний проєкт"><div class="project-overlay">Lorem ipsum фасадна кладка і деталі.</div></article><article class="project-card" data-reveal><img src="../../Assets/Images/BackGround.jpg" alt="Інтер'єрний проєкт"><div class="project-overlay">Lorem ipsum монтаж стін і стель.</div></article></div></div></section>
+    <section id="about"><div class="container"><div class="section-head" data-reveal><span class="section-kicker">Про нас</span><h2>Локальна команда, зрозумілий процес</h2></div><div class="about-grid" data-reveal><article class="about-copy"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus dignissim tortor sed urna commodo, in fermentum lorem placerat.</p><p>Donec consequat, augue vel tincidunt ullamcorper, odio est lacinia mauris, et vestibulum lorem elit a neque.</p></article><figure class="about-image"><img src="../../Assets/Images/BackGround.jpg" alt="Фото будівельного об'єкта"></figure><article class="about-copy"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In a neque at libero vehicula laoreet vitae vel purus.</p><p>Aliquam erat volutpat. Cras luctus tortor sed nunc viverra, nec varius arcu feugiat.</p></article></div></div></section>
+    <section id="contact"><div class="container"><div class="section-head" data-reveal><span class="section-kicker">Контакти</span><h2>Обговорімо ваш наступний проєкт</h2></div><div class="contact-grid"><article class="contact-card" data-reveal><h3>Контактна інформація</h3><ul class="contact-list"><li>Телефон: +358 00 000 0000</li><li>Email: mrhrakennusoy@gmail.com</li><li>Адреса: Example Street 1, 37600 Valkeakoski</li></ul></article><aside class="contact-cta" data-reveal><h3>Почнемо спілкування</h3><p>Напишіть нам, і ми відповімо вам найближчим часом.</p><a class="btn btn-primary" href="mailto:mrhrakennusoy@gmail.com">Get in touch</a></aside></div></div></section>
+  </main>
+  <footer class="site-footer"><div class="container footer-inner"><ul class="footer-nav"><li><a href="#home">Головна</a></li><li><a href="#services">Послуги</a></li><li><a href="#projects">Проєкти</a></li><li><a href="#about">Про нас</a></li><li><a href="#contact">Контакти</a></li></ul><p class="footer-copy">&copy; MRH Rakennus Oy <span data-year></span></p><p class="footer-rights">All rights reserved.</p><p class="footer-credit">Site by <a href="https://www.linkedin.com/in/olenahodun" target="_blank" rel="noopener noreferrer">Olena Hodun</a></p></div></footer>
+  <script src="../../js/ui.js" defer></script>
+  <script src="../../js/animations.js" defer></script>
+  <script src="../../js/lang.js" defer></script>
 </body>
 </html>
