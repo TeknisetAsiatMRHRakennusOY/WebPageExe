@@ -10,14 +10,13 @@
 </head>
 <body>
   <a class="skip-link" href="#home">Siirry sisältöön</a>
+
   <header class="site-header" data-header>
     <div class="container header-inner">
       <a class="logo-link" href="#home" aria-label="MRH Rakennus Oy etusivulle">
         <img src="../../Assets/Icons/LOGO4 OK.png" alt="MRH Rakennus Oy logo">
       </a>
-      <button class="nav-toggle" type="button" aria-label="Avaa valikko" aria-controls="site-nav" aria-expanded="false" data-nav-toggle>
-        <span></span>
-      </button>
+
       <nav class="site-nav" id="site-nav" aria-label="Päävalikko" data-nav>
         <ul class="nav-list">
           <li><a class="nav-link" href="#home">Etusivu</a></li>
@@ -27,15 +26,25 @@
           <li><a class="nav-link" href="#contact">Yhteys</a></li>
         </ul>
       </nav>
-      <nav class="lang-switch" aria-label="Kielen vaihto">
-        <a class="lang-link" href="../fi/" aria-label="Suomi">🇫🇮</a>
-        <a class="lang-link" href="../en/" aria-label="English (UK)">🇬🇧</a>
-        <a class="lang-link" href="../ru/" aria-label="Русский">🇷🇺</a>
-        <a class="lang-link" href="../et/" aria-label="Eesti">🇪🇪</a>
-        <a class="lang-link" href="../uk/" aria-label="Українська">🇺🇦</a>
-      </nav>
+
+      <div class="header-tools">
+        <nav class="lang-switch" aria-label="Kielen vaihto">
+          <a class="lang-link" href="../fi/" aria-label="Suomi" aria-current="page"><img src="../../Assets/Images/flags/fiflag.svg" alt=""></a>
+          <a class="lang-link" href="../en/" aria-label="English (UK)"><img src="../../Assets/Images/flags/enflag.svg" alt=""></a>
+          <a class="lang-link" href="../ru/" aria-label="Русский"><img src="../../Assets/Images/flags/ruflag.svg" alt=""></a>
+          <a class="lang-link" href="../et/" aria-label="Eesti"><img src="../../Assets/Images/flags/etflag.svg" alt=""></a>
+          <a class="lang-link" href="../uk/" aria-label="Українська"><img src="../../Assets/Images/flags/ukflag.svg" alt=""></a>
+        </nav>
+
+        <button class="burger" type="button" aria-label="Avaa valikko" aria-controls="site-nav" aria-expanded="false" data-burger>
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
     </div>
   </header>
+
   <main>
     <section id="home" class="hero">
       <div class="container hero-content" data-reveal>
@@ -44,6 +53,7 @@
         <a class="btn btn-primary" href="#contact">Ota yhteyttä</a>
       </div>
     </section>
+
     <section id="services">
       <div class="container">
         <div class="section-head" data-reveal>
@@ -51,69 +61,77 @@
           <h2>Rakennuspalvelut</h2>
           <p>Valitse palvelu ja avaa lisätiedot. Lorem ipsum -sisältö toimii nyt paikkatekstinä.</p>
         </div>
+
         <div class="services-grid">
           <article class="service-card" data-service-card data-reveal>
             <div class="service-head">
               <h3 class="service-title">väliseinä muuraus</h3>
               <div class="service-thumb"><img src="../../Assets/Images/BackGround.jpg" alt="Väliseinämuuraus"></div>
-              <button class="service-toggle" type="button" aria-expanded="false" aria-controls="service-fi-1" data-read-more="Lue lisää" data-read-less="Lue vähemmän"><span class="arrow" aria-hidden="true">▼</span><span data-toggle-label>Lue lisää</span></button>
+              <button class="service-toggle" type="button" aria-expanded="false" aria-controls="service-fi-1"><span class="arrow" aria-hidden="true">▼</span><span data-toggle-label>Lue lisää</span></button>
             </div>
             <div class="service-content" id="service-fi-1" aria-hidden="true"><div class="service-content-inner"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec efficitur dui ut viverra pulvinar.</p></div></div>
           </article>
+
           <article class="service-card" data-service-card data-reveal>
             <div class="service-head">
               <h3 class="service-title">alakatot</h3>
               <div class="service-thumb"><img src="../../Assets/Images/BackGround.jpg" alt="Alakatot"></div>
-              <button class="service-toggle" type="button" aria-expanded="false" aria-controls="service-fi-2" data-read-more="Lue lisää" data-read-less="Lue vähemmän"><span class="arrow" aria-hidden="true">▼</span><span data-toggle-label>Lue lisää</span></button>
+              <button class="service-toggle" type="button" aria-expanded="false" aria-controls="service-fi-2"><span class="arrow" aria-hidden="true">▼</span><span data-toggle-label>Lue lisää</span></button>
             </div>
             <div class="service-content" id="service-fi-2" aria-hidden="true"><div class="service-content-inner"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer sit amet volutpat quam.</p></div></div>
           </article>
+
           <article class="service-card" data-service-card data-reveal>
             <div class="service-head">
               <h3 class="service-title">seinät</h3>
               <div class="service-thumb"><img src="../../Assets/Images/BackGround.jpg" alt="Seinätyöt"></div>
-              <button class="service-toggle" type="button" aria-expanded="false" aria-controls="service-fi-3" data-read-more="Lue lisää" data-read-less="Lue vähemmän"><span class="arrow" aria-hidden="true">▼</span><span data-toggle-label>Lue lisää</span></button>
+              <button class="service-toggle" type="button" aria-expanded="false" aria-controls="service-fi-3"><span class="arrow" aria-hidden="true">▼</span><span data-toggle-label>Lue lisää</span></button>
             </div>
             <div class="service-content" id="service-fi-3" aria-hidden="true"><div class="service-content-inner"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin id eros ac ante facilisis suscipit.</p></div></div>
           </article>
+
           <article class="service-card" data-service-card data-reveal>
             <div class="service-head">
               <h3 class="service-title">rungot</h3>
               <div class="service-thumb"><img src="../../Assets/Images/BackGround.jpg" alt="Runkotyöt"></div>
-              <button class="service-toggle" type="button" aria-expanded="false" aria-controls="service-fi-4" data-read-more="Lue lisää" data-read-less="Lue vähemmän"><span class="arrow" aria-hidden="true">▼</span><span data-toggle-label>Lue lisää</span></button>
+              <button class="service-toggle" type="button" aria-expanded="false" aria-controls="service-fi-4"><span class="arrow" aria-hidden="true">▼</span><span data-toggle-label>Lue lisää</span></button>
             </div>
             <div class="service-content" id="service-fi-4" aria-hidden="true"><div class="service-content-inner"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur feugiat lectus sem, a commodo turpis elementum id.</p></div></div>
           </article>
+
           <article class="service-card" data-service-card data-reveal>
             <div class="service-head">
               <h3 class="service-title">saneeraus</h3>
               <div class="service-thumb"><img src="../../Assets/Images/BackGround.jpg" alt="Saneeraus"></div>
-              <button class="service-toggle" type="button" aria-expanded="false" aria-controls="service-fi-5" data-read-more="Lue lisää" data-read-less="Lue vähemmän"><span class="arrow" aria-hidden="true">▼</span><span data-toggle-label>Lue lisää</span></button>
+              <button class="service-toggle" type="button" aria-expanded="false" aria-controls="service-fi-5"><span class="arrow" aria-hidden="true">▼</span><span data-toggle-label>Lue lisää</span></button>
             </div>
             <div class="service-content" id="service-fi-5" aria-hidden="true"><div class="service-content-inner"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi. Sed in venenatis massa.</p></div></div>
           </article>
+
           <article class="service-card" data-service-card data-reveal>
             <div class="service-head">
               <h3 class="service-title">ovien asennus</h3>
               <div class="service-thumb"><img src="../../Assets/Images/BackGround.jpg" alt="Ovien asennus"></div>
-              <button class="service-toggle" type="button" aria-expanded="false" aria-controls="service-fi-6" data-read-more="Lue lisää" data-read-less="Lue vähemmän"><span class="arrow" aria-hidden="true">▼</span><span data-toggle-label>Lue lisää</span></button>
+              <button class="service-toggle" type="button" aria-expanded="false" aria-controls="service-fi-6"><span class="arrow" aria-hidden="true">▼</span><span data-toggle-label>Lue lisää</span></button>
             </div>
             <div class="service-content" id="service-fi-6" aria-hidden="true"><div class="service-content-inner"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse ut eleifend risus.</p></div></div>
           </article>
+
           <article class="service-card" data-service-card data-reveal>
             <div class="service-head">
               <h3 class="service-title">ikkunoiden asennus</h3>
               <div class="service-thumb"><img src="../../Assets/Images/BackGround.jpg" alt="Ikkunoiden asennus"></div>
-              <button class="service-toggle" type="button" aria-expanded="false" aria-controls="service-fi-7" data-read-more="Lue lisää" data-read-less="Lue vähemmän"><span class="arrow" aria-hidden="true">▼</span><span data-toggle-label>Lue lisää</span></button>
+              <button class="service-toggle" type="button" aria-expanded="false" aria-controls="service-fi-7"><span class="arrow" aria-hidden="true">▼</span><span data-toggle-label>Lue lisää</span></button>
             </div>
             <div class="service-content" id="service-fi-7" aria-hidden="true"><div class="service-content-inner"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi interdum lectus sed neque dictum condimentum.</p></div></div>
           </article>
         </div>
       </div>
     </section>
+
     <section id="projects">
       <div class="container">
-        <div class="section-head" data-reveal">
+        <div class="section-head" data-reveal>
           <span class="section-kicker">Projektit</span>
           <h2>Viimeaikaiset kohteet</h2>
         </div>
@@ -125,6 +143,7 @@
         </div>
       </div>
     </section>
+
     <section id="about">
       <div class="container">
         <div class="section-head" data-reveal>
@@ -144,6 +163,7 @@
         </div>
       </div>
     </section>
+
     <section id="contact">
       <div class="container">
         <div class="section-head" data-reveal>
@@ -168,6 +188,7 @@
       </div>
     </section>
   </main>
+
   <footer class="site-footer">
     <div class="container footer-inner">
       <ul class="footer-nav">
@@ -177,11 +198,11 @@
         <li><a href="#about">Meistä</a></li>
         <li><a href="#contact">Yhteys</a></li>
       </ul>
-      <p class="footer-copy">&copy; MRH Rakennus Oy <span data-year></span></p>
-      <p class="footer-rights">All rights reserved.</p>
-      <p class="footer-credit">Site by <a href="https://www.linkedin.com/in/olenahodun" target="_blank" rel="noopener noreferrer">Olena Hodun</a></p>
+      <p>&copy; <span data-year></span> MRH Rakennus Oy. All rights reserved.</p>
+      <p class="footer-credit">By <a href="https://www.linkedin.com/in/olenahodun" target="_blank" rel="noopener noreferrer">Olena Hodun</a></p>
     </div>
   </footer>
+
   <script src="../../js/ui.js" defer></script>
   <script src="../../js/animations.js" defer></script>
   <script src="../../js/lang.js" defer></script>
