@@ -93,6 +93,63 @@ window.addEventListener("resize", () => {
   });
 });
 
+/* ================= PROJECT SLIDERS ================= */
+
+const sliders = Array.from(document.querySelectorAll("[data-slider]"));
+
+sliders.forEach(slider => {
+  const track = slider.querySelector(".project-track");
+  if (!track) return;
+
+  const slides = Array.from(track.querySelectorAll("img"));
+  const prev = slider.querySelector(".project-nav.prev");
+  const next = slider.querySelector(".project-nav.next");
+  const dots = Array.from(slider.querySelectorAll(".project-dot"));
+
+  if (!slides.length) return;
+
+  let index = 0;
+  const total = slides.length;
+
+  function render() {
+    track.style.transform = `translateX(-${index * 100}%)`;
+    dots.forEach((dot, dotIndex) => {
+      const active = dotIndex === index;
+      dot.classList.toggle("is-active", active);
+      dot.setAttribute("aria-current", active ? "true" : "false");
+    });
+  }
+
+  function goTo(nextIndex) {
+    index = (nextIndex + total) % total;
+    render();
+  }
+
+  if (prev) {
+    prev.addEventListener("click", () => goTo(index - 1));
+  }
+
+  if (next) {
+    next.addEventListener("click", () => goTo(index + 1));
+  }
+
+  dots.forEach((dot, dotIndex) => {
+    dot.addEventListener("click", () => goTo(dotIndex));
+  });
+
+  // Prevent persistent focus-within hover state after mouse/touch clicks.
+  [prev, next, ...dots].forEach(control => {
+    if (!control) return;
+    control.addEventListener("pointerup", event => {
+      if (event.pointerType === "mouse" || event.pointerType === "touch" || event.pointerType === "pen") {
+        control.blur();
+      }
+    });
+  });
+
+  render();
+});
+
 
   const yearNodes = document.querySelectorAll("[data-year]");
   if (yearNodes.length) {
