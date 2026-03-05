@@ -113,6 +113,7 @@ sliders.forEach(slider => {
 
   function render() {
     track.style.transform = `translateX(-${index * 100}%)`;
+    slider.dataset.currentIndex = String(index);
     dots.forEach((dot, dotIndex) => {
       const active = dotIndex === index;
       dot.classList.toggle("is-active", active);
@@ -148,6 +149,212 @@ sliders.forEach(slider => {
   });
 
   render();
+});
+
+/* ================= PROJECT GALLERY MODAL ================= */
+
+const projectCards = Array.from(document.querySelectorAll(".project-card"));
+const galleryItemsByCard = new Map();
+
+projectCards.forEach(card => {
+  const images = Array.from(card.querySelectorAll(".project-track img, img"));
+  const uniqueImages = images.filter((img, i) => images.indexOf(img) === i);
+  if (!uniqueImages.length) return;
+
+  const sliderArea = card.querySelector(".project-slider");
+  const fallbackImage = uniqueImages[0];
+  const triggerArea = sliderArea || fallbackImage;
+
+  if (!triggerArea) return;
+
+  triggerArea.setAttribute("data-gallery-trigger", "true");
+  galleryItemsByCard.set(card, {
+    images: uniqueImages,
+    triggerArea,
+    title: (card.querySelector(".project-overlay")?.textContent || "").trim()
+  });
+});
+
+function createGalleryModal() {
+  let modal = document.querySelector(".gallery-modal");
+  if (modal) return modal;
+
+  modal = document.createElement("div");
+  modal.className = "gallery-modal";
+  modal.setAttribute("aria-hidden", "true");
+  modal.innerHTML = `
+    <div class="gallery-dialog" role="dialog" aria-modal="true" aria-label="Project image gallery" tabindex="-1">
+      <button class="gallery-close" type="button" aria-label="Close gallery">&times;</button>
+      <button class="gallery-prev" type="button" aria-label="Previous image">&#10094;</button>
+      <img class="gallery-image" src="" alt="">
+      <button class="gallery-next" type="button" aria-label="Next image">&#10095;</button>
+      <div class="gallery-footer">
+        <p class="gallery-caption"></p>
+        <div class="gallery-dots" role="tablist" aria-label="Gallery images"></div>
+      </div>
+    </div>
+  `;
+  document.body.appendChild(modal);
+  return modal;
+}
+
+const galleryModal = createGalleryModal();
+const galleryDialog = galleryModal.querySelector(".gallery-dialog");
+const galleryImage = galleryModal.querySelector(".gallery-image");
+const galleryCaption = galleryModal.querySelector(".gallery-caption");
+const galleryDots = galleryModal.querySelector(".gallery-dots");
+const galleryClose = galleryModal.querySelector(".gallery-close");
+const galleryPrev = galleryModal.querySelector(".gallery-prev");
+const galleryNext = galleryModal.querySelector(".gallery-next");
+
+const galleryState = {
+  images: [],
+  title: "",
+  index: 0,
+  opener: null
+};
+
+function getFocusableInModal() {
+  return Array.from(
+    galleryModal.querySelectorAll(
+      "button:not([disabled]), [href], [tabindex]:not([tabindex='-1'])"
+    )
+  ).filter(el => el.offsetParent !== null);
+}
+
+function renderGallery() {
+  if (!galleryState.images.length) return;
+
+  const total = galleryState.images.length;
+  const index = (galleryState.index + total) % total;
+  galleryState.index = index;
+
+  const current = galleryState.images[index];
+  const alt = (current.getAttribute("alt") || "").trim();
+  galleryImage.src = current.currentSrc || current.src;
+  galleryImage.alt = alt || galleryState.title || `Project image ${index + 1}`;
+  galleryCaption.textContent = galleryState.title || alt || "";
+
+  galleryDots.innerHTML = "";
+  galleryState.images.forEach((_, dotIndex) => {
+    const dot = document.createElement("button");
+    dot.type = "button";
+    dot.className = `gallery-dot${dotIndex === index ? " is-active" : ""}`;
+    dot.setAttribute("aria-label", `Show image ${dotIndex + 1}`);
+    dot.setAttribute("aria-current", dotIndex === index ? "true" : "false");
+    dot.dataset.galleryIndex = String(dotIndex);
+    galleryDots.appendChild(dot);
+  });
+
+  const showNav = total > 1;
+  galleryPrev.hidden = !showNav;
+  galleryNext.hidden = !showNav;
+  galleryDots.hidden = !showNav;
+}
+
+function openGallery(images, startIndex, title, opener) {
+  if (!images.length) return;
+  galleryState.images = images;
+  galleryState.index = startIndex;
+  galleryState.title = title || "";
+  galleryState.opener = opener || document.activeElement;
+
+  renderGallery();
+  galleryModal.classList.add("is-open");
+  galleryModal.setAttribute("aria-hidden", "false");
+  document.body.classList.add("modal-open");
+  galleryClose.focus();
+}
+
+function closeGallery() {
+  if (!galleryModal.classList.contains("is-open")) return;
+
+  galleryModal.classList.remove("is-open");
+  galleryModal.setAttribute("aria-hidden", "true");
+  document.body.classList.remove("modal-open");
+
+  if (galleryState.opener && typeof galleryState.opener.focus === "function") {
+    galleryState.opener.focus();
+  }
+}
+
+function moveGallery(step) {
+  if (!galleryState.images.length) return;
+  galleryState.index += step;
+  renderGallery();
+}
+
+projectCards.forEach(card => {
+  const data = galleryItemsByCard.get(card);
+  if (!data) return;
+
+  data.triggerArea.addEventListener("click", event => {
+    const blocked = event.target.closest(".project-nav, .project-dot, .project-overlay a, .project-overlay button");
+    if (blocked) return;
+
+    const clickedImage = event.target.closest("img");
+    const currentIndex = Number(card.querySelector("[data-slider]")?.dataset.currentIndex || 0);
+    const imageIndex = clickedImage ? data.images.indexOf(clickedImage) : -1;
+    const startIndex = imageIndex >= 0 ? imageIndex : currentIndex;
+
+    const opener = document.activeElement instanceof HTMLElement ? document.activeElement : null;
+    openGallery(data.images, startIndex, data.title, opener);
+  });
+});
+
+galleryClose.addEventListener("click", closeGallery);
+galleryPrev.addEventListener("click", () => moveGallery(-1));
+galleryNext.addEventListener("click", () => moveGallery(1));
+galleryDots.addEventListener("click", event => {
+  const dot = event.target.closest("[data-gallery-index]");
+  if (!dot) return;
+  galleryState.index = Number(dot.dataset.galleryIndex || 0);
+  renderGallery();
+});
+
+galleryModal.addEventListener("click", event => {
+  if (event.target === galleryModal) {
+    closeGallery();
+  }
+});
+
+document.addEventListener("keydown", event => {
+  if (!galleryModal.classList.contains("is-open")) return;
+
+  if (event.key === "Escape") {
+    event.preventDefault();
+    closeGallery();
+    return;
+  }
+
+  if (event.key === "ArrowLeft") {
+    event.preventDefault();
+    moveGallery(-1);
+    return;
+  }
+
+  if (event.key === "ArrowRight") {
+    event.preventDefault();
+    moveGallery(1);
+    return;
+  }
+
+  if (event.key === "Tab") {
+    const focusable = getFocusableInModal();
+    if (!focusable.length) return;
+
+    const first = focusable[0];
+    const last = focusable[focusable.length - 1];
+    const active = document.activeElement;
+
+    if (event.shiftKey && active === first) {
+      event.preventDefault();
+      last.focus();
+    } else if (!event.shiftKey && active === last) {
+      event.preventDefault();
+      first.focus();
+    }
+  }
 });
 
 
