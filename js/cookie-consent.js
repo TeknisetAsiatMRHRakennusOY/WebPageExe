@@ -158,10 +158,9 @@
       return;
     }
 
-    // Insert your real Google Analytics Measurement ID here.
-    const measurementId = "G-XXXXXXXXXX";
+    const measurementId = "G-25XD6P9F0D";
 
-    if (!measurementId || measurementId === "G-XXXXXXXXXX") {
+    if (!measurementId) {
       return;
     }
 

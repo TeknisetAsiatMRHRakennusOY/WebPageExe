@@ -864,7 +864,9 @@ body.modal-open { overflow: hidden; }
 }
 
 .cookie-consent.is-details-open .cookie-details {
-  max-height: 24rem;
+  max-height: min(32rem, 55vh);
+  overflow-y: auto;
+  overscroll-behavior: contain;
 }
 
 .cookie-details-card {
@@ -958,6 +960,8 @@ body.modal-open { overflow: hidden; }
 
   .cookie-consent-inner {
     padding: 0.85rem 0.9rem;
+    max-height: calc(100vh - 1.1rem);
+    overflow-y: auto;
   }
 
   .cookie-actions {
@@ -966,5 +970,9 @@ body.modal-open { overflow: hidden; }
 
   .cookie-btn {
     width: 100%;
+  }
+
+  .cookie-consent.is-details-open .cookie-details {
+    max-height: min(24rem, 45vh);
   }
 }
